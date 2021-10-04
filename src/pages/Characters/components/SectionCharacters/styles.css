@@ -1,0 +1,9 @@
+.sectioncharacter{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    grid-gap: 2rem;
+
+}

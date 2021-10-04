@@ -1,0 +1,23 @@
+.character-portada{
+    width: 100%;
+    height: 30rem;
+    background-color: #504949;
+}
+
+.character-portada-content{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-portada-img{
+    height: 30rem;
+
+}
+
+.character-portada-text{
+    color: white;
+    width: 40rem;
+}

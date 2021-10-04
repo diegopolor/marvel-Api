@@ -1,0 +1,33 @@
+.section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0rem;
+    margin: 1rem 0rem;  
+}
+
+.section-cards{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;    
+}
+
+.section-more{
+    width: 6rem;
+    height: 3rem;
+    text-decoration: none;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    background-color: black;
+    color: white;
+}
+
+.section-more::before{
+    content: "More";
+    position: relative;
+    top: 30%;
+    left: 25%;
+}
