@@ -3,12 +3,12 @@ import NavBar from "../../components/NavBar";
 
 import { useContext } from "react/cjs/react.development";
 import characterContext from "../../context/CharactersContext"
-import SectionCharacters from "./components/SectionCharacters";
+import SectionPage from "../../components/SectionPage";
 import { useEffect } from "react";
 import Loading from "../../components/Loading";
 
 const Characters = ()=>{
-    const {characters, getCharacters, loading} = useContext(characterContext)
+    const {characters, getCharacters, loadingCharacter} = useContext(characterContext)
     
     useEffect(()=>{
         getCharacters()
@@ -18,7 +18,7 @@ const Characters = ()=>{
         <>
             <Header />
             <NavBar />
-            {loading ? <Loading /> : <SectionCharacters data = {characters?.data?.results} /> } 
+            {loadingCharacter ? <Loading /> : <SectionPage url = "character"data = {characters?.data?.results} /> } 
         </>
     )
 

@@ -8,12 +8,13 @@
 
 .navbar-item{
     color: white;
+    margin: .0rem .2rem;
     background-color: #1B1B1B;
     padding: 1rem 3rem;
-    text-decoration: none;
+    text-decoration:none;
     display: flex;
     align-items: center;
-    clip-path: polygon(0 0, 100% 0%, 83% 81%, 13% 80%);
+    clip-path: polygon(0 1%, 100% 0, 100% 50%, 78% 82%, 28% 83%, 0% 50%);
 }
 
 .navbar-item:hover{

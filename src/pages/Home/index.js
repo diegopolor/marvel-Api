@@ -4,13 +4,17 @@ import Loading from "../../components/Loading";
 import NavBar from "../../components/NavBar";
 import Section from "../../components/Section";
 import CharacterContext from "../../context/CharactersContext";
+import comicsContext from "../../context/ComicsContext";
 import Portada from "./components/Portada";
 
 const Home = ()=>{
-    const {characters, getCharacters, loading} = useContext(CharacterContext)  
+    const {characters, getCharacters, loadingCharacter} = useContext(CharacterContext)  
+    const {comics, getComics, loadingComics} = useContext(comicsContext)
+    
 
     useEffect(()=>{
-        getCharacters().catch(null);      
+        getCharacters().catch(null); 
+        getComics().catch()     
     }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
     return(
@@ -18,7 +22,8 @@ const Home = ()=>{
             <Header />
             <NavBar />
             <Portada />
-            {loading ? <Loading /> : <Section name = "Characters" data = {characters?.data?.results}/>}          
+            {loadingCharacter ? <Loading /> : <Section url = "character" nameSection = "Characters" data = {characters?.data?.results}/>}  
+            {loadingComics ? <Loading /> : <Section url = "comic" nameSection = "Comics" data = {comics?.data?.results}/>}          
         </>
     )
 }

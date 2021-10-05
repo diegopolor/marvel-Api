@@ -1,14 +1,13 @@
 import React from "react";
+import ContextGeneral from "./context";
 import Routers from "./routers";
-import CharacterProvider from "./context/CharactersContext/provider";
+
 
 function App() {
   return (
-    <CharacterProvider>
-      <Routers />
-    </CharacterProvider>
-       
-    
+    <ContextGeneral>
+       <Routers />
+    </ContextGeneral> 
   );
 }
 

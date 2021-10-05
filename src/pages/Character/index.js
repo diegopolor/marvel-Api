@@ -10,10 +10,9 @@ import CharacterInfo from "./components/CharacterInfo";
 
 const Character = ()=>{
     const { id } = useParams()
-    const {characterDetail, getCharacterDetail, loading} = useContext(characterContext)
+    const {characterDetail, getCharacterDetail, loadingCharacter} = useContext(characterContext)
     const character = characterDetail?.data?.results;
 
-  
     useEffect(()=>{
         getCharacterDetail(id)?.catch(null)
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
@@ -29,7 +28,7 @@ const Character = ()=>{
         <>
             <Header />
             <NavBar />
-            {loading ? <Loading /> : printCharacterInfo()}    
+            {loadingCharacter ? <Loading /> : printCharacterInfo()}    
         </>
      
     )

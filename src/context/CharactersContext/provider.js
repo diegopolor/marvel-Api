@@ -1,34 +1,29 @@
 import {useState } from "react";
-import requestApi from "../../api";
+import {getDataApi} from "../../api";
 import CharacterContext from "./index";
 
+//provider que contiene los datos globales de los personajes
 const CharacterProvider = ({ children })=>{
     const [characters, setCharacters] = useState({})
     const [characterDetail, setCharacterDetail] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loadingCharacter, setLoadingCharacter] = useState(false)
 
+    //obtiene los datos de todos los personajes 
     const getCharacters = async()=>{
-        try{
-            setLoading(true)
-            const response = await requestApi({ url : "/v1/public/characters"});
-            setCharacters(response)
-            setLoading(false)
-        }catch(error){
-            setCharacters({})
-            Promise.reject(error)
-        }      
+        getDataApi({
+            url: "/v1/public/characters",
+            changeState : setCharacters,
+            loading : setLoadingCharacter
+        })    
     }
 
+    //obtiene los datos del pérsonaje que se pase la id
     const getCharacterDetail = async(id)=>{
-        try{
-            setLoading(true)
-            const response = await requestApi({ url : `/v1/public/characters/${id}`});
-            setCharacterDetail(response)
-            setLoading(false)
-        }catch(error){
-            setCharacterDetail({})
-            Promise.reject(error)
-        }      
+        getDataApi({
+            url:  `/v1/public/characters/${id}`,
+            changeState: setCharacterDetail,
+            loading : setLoadingCharacter
+        })    
     }
  
     return (
@@ -38,7 +33,7 @@ const CharacterProvider = ({ children })=>{
             getCharacters, 
             characterDetail,
             getCharacterDetail,
-            loading
+            loadingCharacter
         }}> 
             {children}
         </CharacterContext.Provider>
