@@ -24,8 +24,23 @@
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.452);
     padding: 1.2rem 2.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
-
-    
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%); 
 }
 
+@media (max-width: 720px) { 
+    .character-extra{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .character-extra-series,
+    .character-extra-comics{    
+        width: 100%;
+        margin: 0;
+    }
+
+    .links{
+        width: 50%;
+    }
+    
+}

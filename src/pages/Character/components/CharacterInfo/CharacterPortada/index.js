@@ -12,7 +12,7 @@ const CharacterPortada = ({img, name, description}) =>{
                 />
                 <div className = "character-portada-text">
                     <h3>{name}</h3>
-                    <p>{description.length < 1  ? "Description not available" : description}</p>
+                    <p className = "character-portada-descrip">{description.length < 1  ? "Description not available" : description}</p>
                 </div>
             </div>            
         </div>

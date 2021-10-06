@@ -38,5 +38,17 @@
     margin: 0;
     text-overflow: Ellipsis; /* will make [...] at the end *//* change to your preferences */
     overflow:hidden; /* older browsers */
-  
+}
+
+@media (max-width: 720px) { 
+   .card-img{
+        height: 15rem;
+        width: 10rem;
+    }
+
+    .card-info{
+        width: 10rem;
+    }
+    
+
 }

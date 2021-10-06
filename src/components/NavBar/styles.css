@@ -18,3 +18,10 @@
 .navbar-item:hover{
     background-color:#414141 ;
 }
+
+@media (max-width: 720px) { 
+    .navbar-item{
+        padding:1rem;
+    }
+
+}
