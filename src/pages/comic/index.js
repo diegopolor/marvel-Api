@@ -29,7 +29,6 @@ const Comic = ()=>{
      
             /> 
         ))
-
     )
 
     return (

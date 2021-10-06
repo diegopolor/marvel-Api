@@ -2,7 +2,7 @@ const Series = ({series})=>{
 
     const printSeries = ()=>(
         series?.map((s, index )=>{
-            return <p key = {index}>{s.name}</p>
+            return <p className = "links" key = {index}>{s.name}</p>
         })
     )
 

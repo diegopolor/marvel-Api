@@ -22,8 +22,12 @@ const Home = ()=>{
             <Header />
             <NavBar />
             <Portada />
-            {loadingCharacter ? <Loading /> : <Section url = "character" nameSection = "Characters" data = {characters?.data?.results}/>}  
-            {loadingComics ? <Loading /> : <Section url = "comic" nameSection = "Comics" data = {comics?.data?.results}/>}          
+            {loadingCharacter ?
+                <Loading /> 
+                :<Section url = "character" nameSection = "Characters" data = {characters?.data?.results}/>}  
+            {loadingComics ? 
+                <Loading /> 
+                : <Section url = "comic" nameSection = "Comics" data = {comics?.data?.results}/>}          
         </>
     )
 }

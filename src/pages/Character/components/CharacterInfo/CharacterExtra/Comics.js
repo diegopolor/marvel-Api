@@ -1,9 +1,26 @@
+import { Link } from "react-router-dom";
+
+
 const Comics = ({comics})=>{
- 
+
+    const getId = (url)=>{
+        const id = url?.split("/")[6]
+        return id
+    }
+
+    const getName = (name)=>(
+        name?.length &&
+         name?.replace(/ /g, '-').replace("#", ".")    //reeemplaza los espacion en blanco del string por un - 
+    ) 
+
     const printComics = ()=>(
-        comics?.map((c, index )=>{
-            return <p key = {index}>{c.name}</p>
-        })
+        comics?.map(({name, resourceURI}, index )=>(    
+                <Link className = "links"
+                    to = {`/comic/${getName(name)}/${getId(resourceURI)}`} 
+                    key = {index}>{name}
+                </Link>
+            )         
+        )
     )
 
     return(
