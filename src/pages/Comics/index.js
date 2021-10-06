@@ -3,12 +3,13 @@ import Header from "../../components/Header";
 import Loading from "../../components/Loading";
 import NavBar from "../../components/NavBar";
 import SectionPage from "../../components/SectionPage";
+import setTitle from "../../components/Title";
 import comicsContext from "../../context/ComicsContext";
 
 //componente de la pagina donde se muestran todos los comics
 const Comics = ()=>{
     const {comics, getComics, loadingComics} = useContext(comicsContext)
-
+    
     //hace la peticion a la api con getComics()
     useEffect(()=>{
         const getData = async()=>{
@@ -18,7 +19,8 @@ const Comics = ()=>{
                 Promise.reject(error)
             }
         }
-        getData()   
+        getData() 
+        setTitle("Comics")
     } , [])// eslint-disable-line react-hooks/exhaustive-deps
    
     return(

@@ -4,17 +4,19 @@ import { useContext } from "react/cjs/react.development";
 import Header from "../../components/Header";
 import Loading from "../../components/Loading";
 import NavBar from "../../components/NavBar";
+import setTitle from "../../components/Title";
 import comicsContext from "../../context/ComicsContext";
 import ComicsCover from "./components/ComicsCover";
 
 const Comic = ()=>{
 
     const {comicsDetail, getComicsDetail, loadingComics} = useContext(comicsContext)
-    const {id} = useParams()
+    const {id, name} = useParams()
     const comic = comicsDetail?.data?.results
 
     useEffect(()=>{
             getComicsDetail(id).catch(null)
+            setTitle(name) 
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
     
     console.log(comicsDetail)

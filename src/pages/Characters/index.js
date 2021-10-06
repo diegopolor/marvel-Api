@@ -6,12 +6,14 @@ import characterContext from "../../context/CharactersContext"
 import SectionPage from "../../components/SectionPage";
 import { useEffect } from "react";
 import Loading from "../../components/Loading";
+import setTitle from "../../components/Title";
 
 const Characters = ()=>{
     const {characters, getCharacters, loadingCharacter} = useContext(characterContext)
     
     useEffect(()=>{
         getCharacters()
+        setTitle("Characters")
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
     
     return(
