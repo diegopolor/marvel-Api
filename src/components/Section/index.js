@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Card from '../Card';
 import './styles.css'
 
+//componente de las secciones en Home characters, Comics, etc
+
 const Section = ({ url, nameSection, data })=>{
    
     const printCards = ()=>{  

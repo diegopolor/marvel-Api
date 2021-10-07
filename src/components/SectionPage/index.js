@@ -1,6 +1,7 @@
 import Card from "../Card"
 import './styles.css'
 
+//Paginas donde se muestran cada sesión comnpleta
 const SectionPage = ({data, url})=>{
     const printCards = ()=>{  
         const cards = data?.map(({ id, name, title, thumbnail } )=>(   

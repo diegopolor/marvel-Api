@@ -28,7 +28,6 @@ const Comic = ()=>{
                 img = {thumbnail} 
                 creators = {creators}
                 description = {description}
-     
             /> 
         ))
     )

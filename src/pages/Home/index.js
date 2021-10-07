@@ -25,10 +25,18 @@ const Home = ()=>{
             <Portada />
             {loadingCharacter ?
                 <Loading /> 
-                :<Section url = "character" nameSection = "Characters" data = {characters?.data?.results}/>}  
+                :<Section 
+                    url = "character" 
+                    nameSection = "Characters" 
+                    data = {characters?.data?.results}
+                />}  
             {loadingComics ? 
                 <Loading /> 
-                : <Section url = "comic" nameSection = "Comics" data = {comics?.data?.results}/>}          
+                : <Section 
+                    url = "comic" 
+                    nameSection = "Comics" 
+                    data = {comics?.data?.results}
+                  />}          
         </>
     )
 }

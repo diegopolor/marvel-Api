@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Loading from "../../components/Loading";
 import setTitle from "../../components/Title";
 
+//pagina donde se muestran todas los personajes
 const Characters = ()=>{
     const {characters, getCharacters, loadingCharacter} = useContext(characterContext)
     

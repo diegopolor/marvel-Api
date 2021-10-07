@@ -9,6 +9,7 @@ const Card = ({
     name, 
     img })=>{
 
+    //obtiene el nombre de la card depeniendo si en la peticion vine la key titulo o name
     const getName = ()=>(
         name?.length ?
          name?.replace(/ /g, '-')    //reeemplaza los espacion en blanco del string por un - 

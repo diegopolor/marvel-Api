@@ -1,9 +1,10 @@
+
+
+//compomente de creadores de los comics
 const Creator = ({creators})=>{  
     const creadores = creators?.items
    
     const getId = (url)=> url?.split("/")[6]; 
- 
- 
     //agregar componente de creador
     const printCreators = ()=>(
      creadores?.map( ({name, role, resourceURI}) =>(

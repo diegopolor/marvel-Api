@@ -8,7 +8,7 @@ import setTitle from "../../components/Title";
 import characterContext from "../../context/CharactersContext";
 import CharacterInfo from "./components/CharacterInfo";
 
-
+//Pagina de personaje indicidual
 const Character = ()=>{
     const { id, name } = useParams()
     const {characterDetail, getCharacterDetail, loadingCharacter} = useContext(characterContext)
