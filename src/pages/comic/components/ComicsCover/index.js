@@ -2,6 +2,7 @@ import getImagen from '../../../../components/Imagen';
 import Creator from './Creators';
 import './styles.css'
 
+//Es la 
 const ComicsCover = ({titulo, description, img, creators}) =>{
     const imagen = getImagen(img, "portrait_uncanny")
 

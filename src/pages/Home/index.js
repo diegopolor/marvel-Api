@@ -8,6 +8,7 @@ import CharacterContext from "../../context/CharactersContext";
 import comicsContext from "../../context/ComicsContext";
 import Portada from "./components/Portada";
 
+
 const Home = ()=>{
     const {characters, getCharacters, loadingCharacter} = useContext(CharacterContext)  
     const {comics, getComics, loadingComics} = useContext(comicsContext)

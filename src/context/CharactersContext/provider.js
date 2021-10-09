@@ -19,11 +19,15 @@ const CharacterProvider = ({ children })=>{
 
     //obtiene los datos del pérsonaje que se pase la id
     const getCharacterDetail = async(id)=>{
-        getDataApi({
-            url:  `/v1/public/characters/${id}`,
-            changeState: setCharacterDetail,
-            loading : setLoadingCharacter
-        })    
+        const data = characters?.data?.results
+        const characterId = data?.
+        find(character => character?.id === parseInt(id))
+        //si tiene valor "characterID" lo alamacena en el local storage en JSON Serializado
+        characterId && localStorage.setItem(
+            "characterID", JSON.stringify(characterId)
+        )
+        //alamcena la data del local storage en el estado parseado como jSON
+        setCharacterDetail(JSON.parse(localStorage.characterID)) 
     }
  
     return (

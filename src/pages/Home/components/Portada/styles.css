@@ -34,5 +34,25 @@
     height: 1.2rem;
     background-color: black;
     clip-path: polygon(0 0, 100% 0%, 95% 100%, 5% 100%);
+}
+
+@media (max-width: 720px) {
+      
+    .portada-content{
+        font-size: .9rem;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5rem;  
+    }
+    
+    .portada-text{
+        padding: 2rem;
+        width: 100%;
+        clip-path: polygon(0%);
+    }
+
+    .portada-border{
+        height: .8rem;
+    }
 
 }

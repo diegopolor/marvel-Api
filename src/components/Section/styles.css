@@ -31,3 +31,15 @@
     top: 30%;
     left: 25%;
 }
+
+@media (max-width: 720px) { 
+    .section{
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .section-cards{
+        gap: .8rem;  
+    }
+
+}

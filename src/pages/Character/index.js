@@ -12,25 +12,26 @@ import CharacterInfo from "./components/CharacterInfo";
 const Character = ()=>{
     const { id, name } = useParams()
     const {characterDetail, getCharacterDetail, loadingCharacter} = useContext(characterContext)
-    const character = characterDetail?.data?.results;
+  
 
     useEffect(()=>{
         getCharacterDetail(id)?.catch(null)
         setTitle(name)  
+        
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
-    //imprime el personaje pasado en el array de resultado de pesonaje
-    const printCharacterInfo = ()=> (
-        character?.map((character, index)=> (
-            <CharacterInfo key = {index} data = {character} />)
-        )
+    //imprime el personaje
+    const printCharacterInfo = (character)=> (
+        //si el objeto mp está vacio lo pasa a la prop
+        character.isEmpty ? undefined :
+            <CharacterInfo data = {character} />    
     )
     
     return(
         <>
             <Header />
             <NavBar />
-            {loadingCharacter ? <Loading /> : printCharacterInfo()}    
+            {loadingCharacter ? <Loading /> : printCharacterInfo(characterDetail)}    
         </>
      
     )
