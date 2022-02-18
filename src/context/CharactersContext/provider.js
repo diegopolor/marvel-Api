@@ -20,8 +20,7 @@ const CharacterProvider = ({ children })=>{
     //obtiene los datos del pérsonaje que se pase la id
     const getCharacterDetail = async(id)=>{
         const data = characters?.data?.results
-        const characterId = data?.
-        find(character => character?.id === parseInt(id))
+        const characterId = data?.find(character => character?.id === parseInt(id))
         //si tiene valor "characterID" lo alamacena en el local storage en JSON Serializado
         characterId && localStorage.setItem(
             "characterID", JSON.stringify(characterId)
